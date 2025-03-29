@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import ParticleBackground from '@/components/ParticleBackground'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Sneha Sawant | Software Developer',
@@ -25,6 +28,15 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/apple-touch-icon-precomposed.png',
+    },
   }
 }
 
@@ -35,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <ParticleBackground />
         {children}
       </body>
